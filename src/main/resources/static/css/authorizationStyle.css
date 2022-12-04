@@ -1,0 +1,139 @@
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+.outerContainer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+}
+
+.formContainer {
+	width: 500px;
+	border-radius: 15px;
+	background-color: #4743FF;
+	box-shadow: 0 0 35px;
+}
+
+.authorizationForm {
+	margin: 0 auto;
+}
+
+.pageName {
+	margin-top: 50px;
+	margin-bottom: 0px;
+	height: 60px;
+	text-align: center;
+	font-family: Calibri;
+	font-size: 48px;
+	color: #fff;
+}
+
+.errorName {
+	position: absolute;
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-family: Calibri;
+	font-size: 24px;
+	color: red;
+}
+
+.usernameField, .passwordField {
+	display: block;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	border: 0;
+	border-radius: 10px;
+	width: 350px;
+	height: 50px;
+
+	font-family: Calibri;
+	font-size: 24px;
+	padding: 15px;
+	box-sizing: border-box;
+}
+
+
+.submitButton {
+	display: block;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+
+	width: 200px;
+	height: 60px;
+
+	padding: 0;
+	border: 0;
+	border-radius: 10px;
+
+
+	font-family: Calibri;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.submitButton:hover {
+	cursor: pointer;
+	border: 2px solid #000;
+}
+
+.submitButton:active {
+	width: 195px;
+	height: 58px;
+	cursor: pointer;
+}
+
+.errorContainer {
+	width: 350px;
+	padding-left: 15px;
+	padding-right: 15px;
+	box-sizing: border-box;
+
+	background-color: #fa2323;
+	border-radius: 15px;
+	box-shadow: 0 0 35px;
+}
+
+p {
+	word-break: break-word;
+	color: #fff;
+
+	font-family: Calibri;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.linkContainer {
+	text-align: center;
+	margin-top: 15px;
+}
+
+.registrationLink {
+	color: #fff;
+	display: inline-block;
+	margin-bottom: 25px;
+	font-family: Calibri;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.registrationLink:hover {
+	color: #969696;
+	display: inline-block;
+
+	font-family: Calibri;
+	font-size: 16px;
+	font-weight: bold;
+}

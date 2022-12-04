@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    <link rel="stylesheet" th:href="@{/css/profileStyle.css}" href="../static/css/profileStyle.css">
+    <link rel="stylesheet" th:href="@{/css/editProfileStyle.css}" href="../static/css/editProfileStyle.css">
+    <link rel="stylesheet" th:href="@{/css/editPasswordStyle.css}" href="../static/css/editPasswordStyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!--<script th:src="@{/js/profileEditScript.js}" src="../static/js/profileEditScript.js"></script>-->
+    <script src="/js/getUserInfo.js"></script>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="pagesContainer"></div>
+        <div class="profileContainer">
+            <div class="pageNameContainer">
+                <h1 class="pageName">Профиль</h1>
+            </div>
+            <div class="profile">
+                <div class="fieldContainer">
+                    <p class="fieldLabel">Имя и фамилия</p>
+                    <input class="smallField" id="nameField" type="text" readonly>
+                    <input class="smallField" id="surnameField" type="text" readonly>
+                </div>
+                <div class="fieldContainer">
+                    <p class="fieldLabel">Email</p>
+                    <input class="bigField" id="emailField" type="email" readonly>
+                </div>
+                <div class="fieldContainer">
+                    <p class="fieldLabel">Логин</p>
+                    <input class="bigField" id="usernameField" type="text" readonly>
+                </div>
+                <div class="buttonsContainer">
+                    <div class="buttonContainer">
+                        <button class="button" id="editProfileButton">Редактировать</button>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="button" id="editPasswordButton">Сменить пароль</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="editProfilePopupBack" th:object="${userForUpdate}" th:class="${#fields.hasErrors()} ? 'editProfilePopupBack active' : 'editProfilePopupBack'">
+        <form class="editProfilePopup" th:method="PUT" th:action="@{/profile/{id}(id=${user.getId()})}" th:class="${#fields.hasErrors()} ? 'editProfilePopup active' : 'editProfilePopup'">
+            <div class="fieldContainer">
+                <p class="fieldLabel">Имя и фамилия</p>
+                <input class="smallField" type="text" th:field="*{name}" th:value="${user.getName()}">
+                <input class="smallField" id="surnameField" type="text" th:field="*{surname}" th:value="${user.getSurname()}">
+            </div>
+            <div class="fieldContainer">
+                <p class="fieldLabel">Email</p>
+                <input class="bigField" type="email" th:field="*{email}" th:value="${user.getEmail()}">
+            </div>
+            <div class="fieldContainer">
+                <p class="fieldLabel">Логин</p>
+                <input class="bigField" type="text" th:field="*{username}" th:value="${user.getUsername()}">
+            </div>
+            <button type="submit" class="saveEditButton">Сохранить</button>
+        </form>
+        <div class="errorContainer" th:if="${#fields.hasErrors()}">
+            <p class="errorName" th:each="error : ${#fields.errors()}" th:text="${error}"></p>
+        </div>
+    </div>
+    <div class="editPasswordPopupBack">
+        <form class="editPasswordPopup" th:method="PUT" th:action="@{/profile/{id}/changePassword(id=${user.getId()})}">
+            <div class="fieldContainer">
+                <p class="fieldLabel">Старый пароль</p>
+                <input class="bigField" type="password" name="oldPassword">
+            </div>
+            <div class="fieldContainer">
+                <p class="fieldLabel">Новый пароль</p>
+                <input class="bigField" type="password" name="newPassword">
+            </div>
+            <button type="submit" class="saveEditButton">Изменить</button>
+        </form>
+    </div>-->
+</body>
+</html>

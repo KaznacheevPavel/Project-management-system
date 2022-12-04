@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Авторизация</title>
+	<link rel="stylesheet" th:href="@{/css/authorizationStyle.css}" href="../static/css/authorizationStyle.css">
+	<script defer th:src="@{/assets/jquery-3.6.1.js}"></script>
+	<script defer th:src="@{/js/Authentication.js}" src="../static/js/Authentication.js"></script>
+</head>
+<body>
+	<div class="outerContainer">
+		<div class="formContainer">
+			<form class="authorizationForm">
+				<h1 class="pageName">Авторизация</h1>
+				<input class="usernameField" type="text" name="username" placeholder="Логин"><br>
+				<input class="passwordField" type="password" name="password" placeholder="Пароль"><br>
+				<input class="submitButton" type="submit" value="Войти">
+			</form>
+			<div class="linkContainer">
+				<a class="registrationLink" href="/registration">Нет аккаунта? Зарегистрируйтесь!</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
