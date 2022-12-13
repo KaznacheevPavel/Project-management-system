@@ -1,0 +1,23 @@
+version: '3'
+services:
+  system:
+    container_name: system
+    image: system
+    depends_on:
+      - db
+    build: ./
+    ports:
+      - "8080:8080"
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./create.sql:/docker-entrypoint-initdb.d/create.sql
+    environment:
+      - POSTGRES_USER=SpringApplication
+      - POSTGRES_PASSWORD=nsytepyftim
+      - POSTGRES_DB=ProjectDB
+volumes:
+  db:

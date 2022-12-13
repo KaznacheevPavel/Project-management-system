@@ -1,4 +1,3 @@
-FROM openjdk:17.0.2-jdk-slim-buster
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM openjdk:17
+ADD ./target/system-0.1.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
