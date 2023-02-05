@@ -7,7 +7,7 @@ br {
     content: "";
 }
 
-#outerContainer {
+.outerContainer {
     width: 100%;
     height: 100%;
     display: flex;
@@ -16,18 +16,18 @@ br {
     gap: 50px;
 }
 
-#formContainer {
+.formContainer {
     width: 500px;
     border-radius: 15px;
     background-color: #4743FF;
     box-shadow: 0 0 35px;
 }
 
-#registrationForm {
+.registrationForm {
     margin: 0 auto;
 }
 
-#pageName {
+.pageName {
     margin-top: 50px;
     margin-bottom: 0px;
     height: 60px;
@@ -37,7 +37,7 @@ br {
     color: #fff;
 }
 
-#field {
+.field {
     display: block;
     margin-top: 30px;
     margin-left: auto;
@@ -54,7 +54,7 @@ br {
     box-sizing: border-box;
 }
 
-#submitButton {
+.submitButton {
     display: block;
     margin-top: 50px;
     margin-left: auto;
@@ -73,18 +73,18 @@ br {
     text-align: center;
 }
 
-#submitButton:hover {
+.submitButton:hover {
     cursor: pointer;
     border: 2px solid #000;
 }
 
-#submitButton:active {
+.submitButton:active {
     width: 245px;
     height: 58px;
     cursor: pointer;
 }
 
-#errorContainer {
+.errorContainer {
     width: 350px;
     padding-left: 15px;
     padding-right: 15px;
@@ -98,18 +98,18 @@ br {
 p {
     word-break: break-word;
     color: #fff;
-
+    text-align: center;
     font-family: Calibri;
     font-size: 22px;
     font-weight: bold;
 }
 
-#linkContainer {
+.linkContainer {
     text-align: center;
     margin-top: 15px;
 }
 
-#loginLink {
+.loginLink {
     color: #fff;
     display: inline-block;
     margin-bottom: 25px;
@@ -118,7 +118,7 @@ p {
     font-weight: bold;
 }
 
-#loginLink:hover {
+.loginLink:hover {
     color: #969696;
     display: inline-block;
 

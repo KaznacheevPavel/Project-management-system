@@ -1,7 +1,5 @@
 package ru.kaznacheev.system.entity;
 
-import ru.kaznacheev.system.util.ValidatorMarker;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -16,28 +14,28 @@ public class User implements Cloneable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotBlank(message = "Имя обязательно", groups = {ValidatorMarker.Create.class, ValidatorMarker.Update.class})
-    @Size(min = 1, max = 30, message = "Имя должно быть длинной от 1 до 25 символов", groups = {ValidatorMarker.Create.class, ValidatorMarker.Update.class})
+    @NotBlank(message = "Имя обязательно")
+    @Size(min = 1, max = 30, message = "Имя должно быть длинной от 1 до 25 символов")
     @Column(name = "name")
     private String name;
 
-    @NotBlank(message = "Фамилия обязательна", groups = {ValidatorMarker.Create.class, ValidatorMarker.Update.class})
-    @Size(min = 1, max = 50, message = "Фамилия должна быть длинной от 1 до 25 символов", groups = {ValidatorMarker.Create.class, ValidatorMarker.Update.class})
+    @NotBlank(message = "Фамилия обязательна")
+    @Size(min = 1, max = 50, message = "Фамилия должна быть длинной от 1 до 50 символов")
     @Column(name = "surname")
     private String surname;
 
     @Email
-    @NotBlank(message = "Email обязателен", groups = {ValidatorMarker.Create.class, ValidatorMarker.Update.class})
-    @Size(min = 5, max = 75, message = "Email должен быть длинной от 5 до 75 символов", groups = {ValidatorMarker.Create.class, ValidatorMarker.Update.class})
+    @NotBlank(message = "Email обязателен")
+    @Size(min = 5, max = 75, message = "Email должен быть длинной от 5 до 75 символов")
     @Column(name = "email")
     private String email;
 
-    @NotBlank(message = "Логин обязателен", groups = {ValidatorMarker.Create.class, ValidatorMarker.Update.class})
-    @Size(min = 5, max = 30, message = "Логин должен быть длинной от 5 до 30 символов", groups = {ValidatorMarker.Create.class, ValidatorMarker.Update.class})
+    @NotBlank(message = "Логин обязателен")
+    @Size(min = 5, max = 30, message = "Логин должен быть длинной от 5 до 30 символов")
     @Column(name = "username")
     private String username;
 
-    @NotBlank(message = "Пароль обязателен", groups = ValidatorMarker.Create.class)
+    @NotBlank(message = "Пароль обязателен")
     @Column(name = "password")
     private String password;
 
@@ -110,15 +108,5 @@ public class User implements Cloneable{
                 ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 '}';
-    }
-
-    @Override
-    public User clone() {
-        try {
-            User clone = (User) super.clone();
-            return clone;
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
-        }
     }
 }

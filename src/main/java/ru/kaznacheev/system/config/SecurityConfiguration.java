@@ -19,16 +19,16 @@ public class SecurityConfiguration {
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login", "/registration").not().authenticated()
+                .antMatchers("/login", "/registration", "/api/users/registration").not().authenticated()
                 .antMatchers("/", "/error", "/css/**", "/js/**", "/assets/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/suc")
-                .failureHandler(new AuthFailureHandler())
+                .successHandler(new CustomAuthenticationSuccessHandler())
+                .failureHandler(new CustomAuthenticationFailureHandler())
                 .and()
-                .logout().logoutUrl("/logout").logoutSuccessUrl("/").invalidateHttpSession(true);
+                .logout().logoutUrl("/logout").logoutSuccessUrl("/login").invalidateHttpSession(true);
         return httpSecurity.build();
     }
 

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    const csrfToken = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+    const csrfToken = Cookies.get('XSRF-TOKEN');
     const form = $(".authorizationForm")[0];
     const errorDiv = `
         <div class="errorContainer">
@@ -16,16 +16,11 @@ $(document).ready(function() {
             headers: {'X-XSRF-TOKEN': csrfToken},
             body: new FormData(form)
         })
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error(res.status);
+            .then(response => {
+                if (response.redirected) {
+                    document.location = response.url;
                 }
-                if (res.redirected) {
-                    document.location = res.url;
-                }
-            })
-            .catch((err) => {
-                if (err.message === '401' && !$('div').hasClass("errorContainer")) {
+                if (response.status === 400 && !$('div').hasClass("errorContainer")) {
                     $(".outerContainer").append(errorDiv);
                 }
             })

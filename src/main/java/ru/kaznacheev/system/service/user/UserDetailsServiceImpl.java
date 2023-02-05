@@ -1,4 +1,4 @@
-package ru.kaznacheev.system.service;
+package ru.kaznacheev.system.service.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -26,7 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Optional<User> user = userRepository.findByUsername(username);
 
         if (user.isEmpty())
-            throw new UsernameNotFoundException("User not found");
+            throw new UsernameNotFoundException("Пользователь не найден");
 
         return new UserDetailsImpl(user.get());
     }

@@ -1,41 +1,31 @@
-.editPasswordPopupBack {
+.editProfilePopupBack {
     width: 100%;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s all;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
-}
-
-.editPasswordPopupBack.active {
     opacity: 1;
     pointer-events: all;
     transition: 0.3s all;
 }
 
-.editPasswordPopup {
+.editProfilePopup {
     width: 800px;
     padding-bottom: 50px;
     text-align: center;
     border-radius: 15px;
     box-shadow: 0 0 50px;
     background: #4743FF;
-    transition: 0.3s all;
-}
-
-.editPasswordPopup.active {
     transform: scale(1);
     transition: 0.3s all;
 }
 
-.saveEditButton {
+.saveUserEditButton {
     width: 450px;
     height: 60px;
     border: 0;
@@ -46,12 +36,12 @@
     font-weight: bold;
 }
 
-.saveEditButton:hover {
+.saveUserEditButton:hover {
     cursor: pointer;
 	border: 2px solid #000;
 }
 
-.saveEditButton:active {
+.saveUserEditButton:active {
 	width: 445px;
 	height: 58px;
     font-size: 31px;
@@ -67,10 +57,57 @@
     box-shadow: 0 0 35px;
 }
 
-.errorName {
+.error {
     word-break: break-word;
     color: #fff;
     font-family: Calibri;
     font-size: 22px;
+    font-weight: bold;
+}
+
+.editFieldContainer {
+    display: inline-block;
+}
+
+.editFieldLabel {
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    font-family: Calibri;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.editSmallField {
+    width: 250px;
+    height: 50px;
+    padding: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 15px;
+    font-family: Calibri;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#editSurnameField {
+    margin-left: 15px;
+}
+
+.editBigField {
+    width: 515px;
+    height: 50px;
+    padding: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 15px;
+    font-family: Calibri;
+    font-size: 24px;
     font-weight: bold;
 }

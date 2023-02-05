@@ -7,7 +7,6 @@ import ru.kaznacheev.system.entity.User;
 import java.util.Collection;
 
 public class UserDetailsImpl implements UserDetails {
-
     private final User user;
 
     public UserDetailsImpl(User user) {
@@ -17,6 +16,10 @@ public class UserDetailsImpl implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
+    }
+
+    public int getId() {
+        return user.getId();
     }
 
     @Override
@@ -47,9 +50,5 @@ public class UserDetailsImpl implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
-    }
-
-    public User getUser() {
-        return user;
     }
 }

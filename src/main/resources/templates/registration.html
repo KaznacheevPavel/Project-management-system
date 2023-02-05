@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
-    <link rel="stylesheet" th:href="@{/css/registrationStyle.css}" href="../static/css/registrationStyle.css">
+    <link rel="stylesheet" href="/css/registration/registration.css">
+    <script defer src="/assets/jquery-3.6.1.js"></script>
+    <script defer src="/js/registration/registration.js"></script>
 </head>
 <body>
-    <div id="outerContainer">
-        <div id="formContainer">
-            <!--/*@thymesVar id="user" type="ru.kaznacheev.system.entity.User"*/-->
-            <form th:method="POST" th:action="@{/registration}" th:object="${user}" id="registrationForm">
-                <h1 id="pageName">Регистрация</h1>
-                <input placeholder="Имя" type="text" id="field" th:field="*{name}"><br>
-                <input placeholder="Фамилия" type="text" id="field" th:field="*{surname}"><br>
-                <input placeholder="Email" type="email" id="field" th:field="*{email}">
-                <input placeholder="Логин" type="text" id="field" th:field="*{username}"><br>
-                <input placeholder="Пароль" type="password" id="field" th:field="*{password}"><br>
-                <input type="submit" value="Зарегистрироваться" id="submitButton">
+    <div class="outerContainer">
+        <div class="formContainer">
+            <form class="registrationForm">
+                <h1 class="pageName">Регистрация</h1>
+                <input class="field" placeholder="Имя" type="text" name="name"><br>
+                <input class="field" placeholder="Фамилия" type="text" name="surname"><br>
+                <input class="field" placeholder="Email" type="email" name="email">
+                <input class="field" placeholder="Логин" type="text" name="username"><br>
+                <input class="field" placeholder="Пароль" type="password" name="password"><br>
+                <input class="submitButton" type="submit" value="Зарегистрироваться">
             </form>
-            <div id="linkContainer">
-                <a href="/login" id="loginLink">Уже зарегистрированы? Авторизуйтесь!</a>
+            <div class="linkContainer">
+                <a href="/login" class="loginLink">Уже зарегистрированы? Авторизуйтесь!</a>
             </div>
-        </div>
-        <div id="errorContainer" th:if="${#fields.hasErrors('user.*')}">
-            <p th:each="error : ${#fields.errors('user.*')}" th:text="${error}"></p>
         </div>
     </div>
 </body>
